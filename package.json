@@ -1,0 +1,69 @@
+{
+  "name": "@sanif/pi-herdr-fork",
+  "version": "0.1.0",
+  "description": "Fork a Pi session from any earlier message into a new Herdr pane or tab.",
+  "type": "module",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "fork.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "herdr",
+    "fork",
+    "session",
+    "branching",
+    "terminal",
+    "developer-tools"
+  ],
+  "author": {
+    "name": "Sanif",
+    "email": "sanifss@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanif/pi-herdr-fork.git"
+  },
+  "homepage": "https://github.com/sanif/pi-herdr-fork#readme",
+  "bugs": {
+    "url": "https://github.com/sanif/pi-herdr-fork/issues"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "packageManager": "bun@1.3.14",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "pack:check": "bun pm pack --dry-run",
+    "verify": "bun run typecheck && bun test && bun run pack:check",
+    "prepublishOnly": "bun run verify"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.0.2",
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
